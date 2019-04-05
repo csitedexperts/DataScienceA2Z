@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://benalexkeen.com/basic-statistics-in-python/ -->
+<html class="no-touch webkit chrome chrome73 win js no-hidpi datauri gr__benalexkeen_com minw_1200 orientation_landscape" lang="en-GB" xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://benalexkeen.com/xmlrpc.php">
+<script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script src="./Basic Statistics in Python – Ben Alex Keen_files/MathJax.js.download" id="">
+</script>
+<title>Basic Statistics in Python – Ben Alex Keen</title>
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Ben Alex Keen » Feed" href="http://benalexkeen.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Ben Alex Keen » Comments Feed" href="http://benalexkeen.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Ben Alex Keen » Basic Statistics in Python Comments Feed" href="http://benalexkeen.com/basic-statistics-in-python/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/benalexkeen.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.10"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Basic Statistics in Python – Ben Alex Keen_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="layerslider-css" href="./Basic Statistics in Python – Ben Alex Keen_files/layerslider.css" type="text/css" media="all">
+<link rel="stylesheet" id="ls-google-fonts-css" href="./Basic Statistics in Python – Ben Alex Keen_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./Basic Statistics in Python – Ben Alex Keen_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="uncode-style-css" href="./Basic Statistics in Python – Ben Alex Keen_files/style.css" type="text/css" media="all">
+<style id="uncode-style-inline-css" type="text/css">
+
+@media (min-width: 960px) { .limit-width { max-width: 1200px; margin: auto;}}
+.menu-primary ul.menu-smart > li > a, .menu-primary ul.menu-smart li.dropdown > a, .menu-primary ul.menu-smart li.mega-menu > a, .vmenu-container ul.menu-smart > li > a, .vmenu-container ul.menu-smart li.dropdown > a { text-transform: uppercase; }
+</style>
+<link rel="stylesheet" id="uncode-icons-css" href="./Basic Statistics in Python – Ben Alex Keen_files/uncode-icons.css" type="text/css" media="all">
+<link rel="stylesheet" id="uncode-custom-style-css" href="./Basic Statistics in Python – Ben Alex Keen_files/style-custom.css" type="text/css" media="all">
+<style id="uncode-custom-style-inline-css" type="text/css">
+.input_prompt {color:#8476FF;}.navbar {margin-bottom:20px;border-radius:0;}.c {color:#cc8400;}.k {color:#338822;font-weight:bold;}.kn {color:#338822;font-weight:bold;}.mi {color:#ce3785;}.o {color:#889a00;}.ow {color:#BA22FF;font-weight:bold;}.nb {color:#338822;}.n {color:#0c3643;}.s {color:#cc2222;}.se {color:#cc2222;font-weight:bold;}.s1 {color:#3ba198;}.s2 {color:#3ba198;}.c1 {color:#849496;}.sd {color:#849496;}.si {color:#C06688;font-weight:bold;}.mf {color:#cd3785;}.nn {color:#4D00FF;font-weight:bold;}.output_area pre {background-color:#FFFFFF;padding-left:5%;}.site-description {margin:10px auto;}#site-title {margin-top:10px;}.blog-header {padding-top:20px;padding-bottom:20px;}.code_cell {padding-left:2%;}.cell {margin-top:20px;margin-bottom:20px;}br {line-height:2;}.cell h1, h2, h3, h4 {margin-top:30px;margin-bottom:10px;}code,kbd,pre,samp {font-family:Monaco, monospace;border-radius:2px;font-size:12px;line-height:1.75;margin:18px 0 0;}code {padding:4px;color:#2e8ad8;}pre {display:block;margin:18px 0px 0px 0px;padding:10px 10px 10px 10px;border:1px solid;}.output_prompt {color:#b20000}.style-light .link,.style-light.style-override .link,.style-dark .style-light .link,.style-light a,.style-light.style-override a,.style-dark .style-light a,.style-light input[type=checkbox]:checked:before,.style-light.style-override input[type=checkbox]:checked:before,.style-dark .style-light input[type=checkbox]:checked:before {color:#0cb4ce}
+</style>
+<link rel="stylesheet" id="uncodefont-google-css" href="./Basic Statistics in Python – Ben Alex Keen_files/css(1)" type="text/css" media="all">
+<script type="text/javascript" src="./Basic Statistics in Python – Ben Alex Keen_files/greensock.js.download"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style>
+<script type="text/javascript" src="./Basic Statistics in Python – Ben Alex Keen_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Basic Statistics in Python – Ben Alex Keen_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript" src="./Basic Statistics in Python – Ben Alex Keen_files/layerslider.kreaturamedia.jquery.js.download"></script>
+<script type="text/javascript" src="./Basic Statistics in Python – Ben Alex Keen_files/layerslider.transitions.js.download"></script>
+<script type="text/javascript" src="./Basic Statistics in Python – Ben Alex Keen_files/ai-uncode.min.js.download" id="uncodeAI" data-breakpoints-images="258,516,720,1032,1440,2064,2880"></script>
+<script type="text/javascript" src="./Basic Statistics in Python – Ben Alex Keen_files/init.min.js.download"></script>
+<link rel="https://api.w.org/" href="http://benalexkeen.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://benalexkeen.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://benalexkeen.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Random Forests in python using scikit-learn" href="http://benalexkeen.com/random-forests-in-python-using-scikit-learn/">
+<link rel="next" title="Comparative Statistics in Python using SciPy" href="http://benalexkeen.com/comparative-statistics-in-python-using-scipy/">
+<meta name="generator" content="WordPress 4.9.10">
+<link rel="canonical" href="http://benalexkeen.com/basic-statistics-in-python/">
+<link rel="shortlink" href="http://benalexkeen.com/?p=45226">
+<link rel="alternate" type="application/json+oembed" href="http://benalexkeen.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fbenalexkeen.com%2Fbasic-statistics-in-python%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://benalexkeen.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fbenalexkeen.com%2Fbasic-statistics-in-python%2F&amp;format=xml">
+<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress.">
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="http://benalexkeen.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style type="text/css">undefined</style><meta name="sharer.share-button.share-buttons.share-inline.only-icon.sharer-0"><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.1') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body class="post-template-default single single-post postid-45226 single-format-standard style-color-wayh-bg smooth-scroller hmenu hmenu-position-center header-full-width main-center-align wpb-js-composer js-comp-ver-5.4.7 vc_responsive hide-scrollup" data-gr-c-s-loaded="true"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+		
+	<div class="box-wrapper">
+		<div class="box-container" style="width: 1584px; margin-left: -0.5px;">
+		<script type="text/javascript">UNCODE.initBox();</script>
+		<div class="menu-wrapper menu-no-arrows with-header" style="height: 0px;">
+													
+													<header id="masthead" class="navbar menu-primary menu-light submenu-dark menu-transparent menu-add-padding style-light-original menu-absolute menu-with-logo style-dark-override" style="opacity: 1;">
+														<div class="menu-container style-color-xsdn-bg menu-borders menu-shadows" style="width: 1584px;">
+															<div class="row-menu">
+																<div class="row-menu-inner">
+																	<div class="col-lg-0 logo-container megamenu-diff middle">
+																		<div id="main-logo" class="navbar-header style-light">
+																			<a href="http://benalexkeen.com/" class="navbar-brand" data-minheight="14"><h2 class="text-logo h3 logo-skinnable" data-maxheight="14" style="font-size:14px;">Ben Alex Keen</h2></a>
+																		</div>
+																		<div class="mmb-container"><div class="mobile-menu-button mobile-menu-button-light lines-button x2"><span class="lines"></span></div></div>
+																	</div>
+																	<div class="col-lg-12 main-menu-container middle">
+																		<div class="menu-horizontal">
+																			<div class="menu-horizontal-inner">
+																				<div class="nav navbar-nav navbar-main navbar-nav-first"><ul id="menu-main" class="menu-primary-inner menu-smart sm" data-smartmenus-id="15543011895804634"><li id="menu-item-45021" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-45021"><a title="Home" href="http://benalexkeen.com/">Home<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+<li id="menu-item-45023" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45023"><a title="About" href="http://benalexkeen.com/about/">About<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+<li id="menu-item-45090" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45090"><a title="Blog" href="http://benalexkeen.com/blog/">Blog<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+<li id="menu-item-45024" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45024"><a title="Contact" href="http://benalexkeen.com/contact/">Contact<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+</ul></div><div class="nav navbar-nav navbar-nav-last"><ul class="menu-smart sm menu-icons" data-smartmenus-id="1554301189581933"><li class="search-icon style-light dropdown"><a href="http://benalexkeen.com/basic-statistics-in-python/#" class="trigger-overlay" data-area="search" data-container="box-container">
+												<i class="fa fa-search3"></i><span class="desktop-hidden"><span>Search</span></span><i class="fa fa-angle-down fa-dropdown desktop-hidden"></i>
+												</a>
+												<ul role="menu" class="drop-menu desktop-hidden">
+													<li>
+														<form class="search" method="get" action="http://benalexkeen.com/">
+															<input type="search" class="search-field" placeholder="Search…" value="" name="s" title="Search for:">
+														</form>
+													</li>
+												</ul></li></ul></div></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</header>
+												</div>			<script type="text/javascript">UNCODE.fixMenuHeight();</script>
+			<div class="main-wrapper">
+				<div class="main-container">
+					<div class="page-wrapper">
+						<div class="sections-container"><div id="page-header" data-imgready="true" class="header-style-dark"><div class="header-basic style-dark">
+													<div class="background-element header-wrapper header-scroll-opacity header-parallax style-color-wayh-bg header-only-text" data-height="10" style="min-height: 200px; height: 74px;">
+													<div class="header-bg-wrapper">
+											<div class="header-bg" style="transform: translate3d(0px, 0px, 0px);"></div>
+											<div class="block-bg-overlay style-color-wayh-bg" style="opacity: 0.65;"></div>
+										</div><div class="header-main-container limit-width">
+												<div class="header-content header-center header-middle header-align-center" style="padding-top: 69px;">
+													<div class="header-content-inner">
+														<h1 class="header-title font-762333 h3 font-weight-700 text-uppercase"><span>Basic Statistics in Python</span></h1><div class="post-info">1st June 2017<span>|</span>In <a href="http://benalexkeen.com/category/python/" title="View all posts in Python">Python</a><span>|</span>By <a href="http://benalexkeen.com/author/benalexkeen/">Ben Keen</a></div>
+													</div>
+												</div>
+											</div><div class="header-scrolldown style-dark"><i class="fa fa-angle-down"></i></div></div>
+									</div></div><script type="text/javascript">UNCODE.initHeader();</script><article id="post-45226" class="page-body style-color-xsdn-bg post-45226 post type-post status-publish format-standard hentry category-python">
+          <div class="post-wrapper">
+          	<div class="post-body"><div class="post-content" style="max-width: 800px; margin: auto;"><div class="row-container">
+	  					<div class="row row-parent style-light double-top-padding double-bottom-padding">
+								<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Basic-Statistics-in-Python">Basic Statistics in Python</h1>
+<p>Let’s create a dataset to work with and plot a histogram to visualise:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2">
+<pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'ggplot'</span><span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Measures-of-Central-Tendency">Measures of Central Tendency</h1>
+<p>Our measures of central tendency include mean, median or mode</p>
+<p>The mean is calculated as</p>
+<p><span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mi&gt;&amp;#x03BC;&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mstyle displaystyle=&quot;true&quot; scriptlevel=&quot;0&quot;&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;munderover&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mrow&gt;&lt;/munderover&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mfrac&gt;&lt;/mstyle&gt;&lt;/math&gt;" role="presentation" style="text-align: center; position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 6.613em; display: inline-block;"><span style="display: inline-block; position: relative; width: 5.644em; height: 0px; font-size: 117%;"><span style="position: absolute; clip: rect(0.801em, 1005.64em, 3.536em, -999.997em); top: -2.675em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: MathJax_Math-italic;">μ</span><span class="mo" id="MathJax-Span-4" style="font-family: MathJax_Main; padding-left: 0.288em;">=</span><span class="mstyle" id="MathJax-Span-5" style="padding-left: 0.288em;"><span class="mrow" id="MathJax-Span-6"><span class="mfrac" id="MathJax-Span-7"><span style="display: inline-block; position: relative; width: 3.479em; height: 0px; margin-right: 0.117em; margin-left: 0.117em;"><span style="position: absolute; clip: rect(2.852em, 1003.37em, 4.447em, -999.997em); top: -4.783em; left: 50%; margin-left: -1.65em;"><span class="mrow" id="MathJax-Span-8"><span class="munderover" id="MathJax-Span-9"><span style="display: inline-block; position: relative; width: 2.282em; height: 0px;"><span style="position: absolute; clip: rect(3.08em, 1001.03em, 4.39em, -999.997em); top: -3.986em; left: 0em;"><span class="mo" id="MathJax-Span-10" style="font-family: MathJax_Size1; vertical-align: 0em;">∑</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.365em, 1000.69em, 4.162em, -999.997em); top: -4.442em; left: 1.085em;"><span class="texatom" id="MathJax-Span-11"><span class="mrow" id="MathJax-Span-12"><span class="mi" id="MathJax-Span-13" style="font-size: 70.7%; font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.365em, 1001.2em, 4.162em, -999.997em); top: -3.701em; left: 1.085em;"><span class="texatom" id="MathJax-Span-14"><span class="mrow" id="MathJax-Span-15"><span class="mi" id="MathJax-Span-16" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span class="mo" id="MathJax-Span-17" style="font-size: 70.7%; font-family: MathJax_Main;">=</span><span class="mn" id="MathJax-Span-18" style="font-size: 70.7%; font-family: MathJax_Main;">1</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-19" style="padding-left: 0.174em;"><span style="display: inline-block; position: relative; width: 0.915em; height: 0px;"><span style="position: absolute; clip: rect(3.365em, 1000.52em, 4.162em, -999.997em); top: -3.986em; left: 0em;"><span class="mi" id="MathJax-Span-20" style="font-family: MathJax_Math-italic;">x</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -3.815em; left: 0.573em;"><span class="mi" id="MathJax-Span-21" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.137em, 1000.91em, 4.162em, -999.997em); top: -3.302em; left: 50%; margin-left: -0.453em;"><span class="mi" id="MathJax-Span-22" style="font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.858em, 1003.48em, 1.256em, -999.997em); top: -1.308em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 3.479em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.085em;"></span></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.681em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.863em; border-left: 0px solid; width: 0px; height: 2.937em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>μ</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><munderover><mo>∑</mo><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>N</mi></mrow></munderover><msub><mi>x</mi><mi>i</mi></msub></mrow><mi>N</mi></mfrac></mstyle></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-1">\mu = \dfrac{\sum_{i=1}^{N} x_i}{N}</script></p>
+<p>The median value is the middlemost value, you take the value in the position of</p>
+<p><span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mstyle displaystyle=&quot;true&quot; scriptlevel=&quot;0&quot;&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mstyle&gt;&lt;/math&gt;" role="presentation" style="text-align: center; position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-23" style="width: 3.137em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.681em; height: 0px; font-size: 117%;"><span style="position: absolute; clip: rect(1.142em, 1002.68em, 3.536em, -999.997em); top: -2.675em; left: 0em;"><span class="mrow" id="MathJax-Span-24"><span class="mstyle" id="MathJax-Span-25"><span class="mrow" id="MathJax-Span-26"><span class="mfrac" id="MathJax-Span-27"><span style="display: inline-block; position: relative; width: 2.453em; height: 0px; margin-right: 0.117em; margin-left: 0.117em;"><span style="position: absolute; clip: rect(3.137em, 1002.28em, 4.219em, -999.997em); top: -4.67em; left: 50%; margin-left: -1.194em;"><span class="mrow" id="MathJax-Span-28"><span class="mi" id="MathJax-Span-29" style="font-family: MathJax_Math-italic;">n</span><span class="mo" id="MathJax-Span-30" style="font-family: MathJax_Main; padding-left: 0.231em;">+</span><span class="mn" id="MathJax-Span-31" style="font-family: MathJax_Main; padding-left: 0.231em;">1</span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.137em, 1000.46em, 4.162em, -999.997em); top: -3.302em; left: 50%; margin-left: -0.225em;"><span class="mn" id="MathJax-Span-32" style="font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.858em, 1002.45em, 1.256em, -999.997em); top: -1.308em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 2.453em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.085em;"></span></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.681em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.863em; border-left: 0px solid; width: 0px; height: 2.537em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac></mstyle></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-2">\dfrac{n+1}{2}</script></p>
+<p>of the sorted data.</p>
+<p>The mode is the most frequent value.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Mean">Mean</h3>
+<p>Numpy implements a <code>mean</code> function for calculating the mean:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2">
+<pre><span></span><span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">mean</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[2]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>5.0999999999999996</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Median">Median</h3>
+<p>Numpy also implements a <code>median</code> function for calculating the median:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2">
+<pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>5.0</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Mode">Mode</h3>
+<p>We can see from our histogram already that 5 is the modal value.</p>
+<p>There is no in-built numpy mode function, but there is one from the scipy stats module we can use.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2">
+<pre><span></span><span class="n">mode</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">"The modal value is {} with a count of {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="o">.</span><span class="n">mode</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mode</span><span class="o">.</span><span class="n">count</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The modal value is 5.0 with a count of 23
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Range">Range</h1>
+<p>The range gives a measure of how spread apart the values are.</p>
+<p>The range is simply calculated as the maximum value – minimum value</p>
+<p><span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo&gt;&amp;#x2013;&lt;/mo&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="text-align: center; position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-33" style="width: 9.575em; display: inline-block;"><span style="display: inline-block; position: relative; width: 8.151em; height: 0px; font-size: 117%;"><span style="position: absolute; clip: rect(1.769em, 1008.04em, 3.08em, -999.997em); top: -2.675em; left: 0em;"><span class="mrow" id="MathJax-Span-34"><span class="mi" id="MathJax-Span-35" style="font-family: MathJax_Math-italic;">M<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span><span class="mi" id="MathJax-Span-36" style="font-family: MathJax_Math-italic;">a</span><span class="mi" id="MathJax-Span-37" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-38" style="font-family: MathJax_Main;">(</span><span class="msubsup" id="MathJax-Span-39"><span style="display: inline-block; position: relative; width: 0.915em; height: 0px;"><span style="position: absolute; clip: rect(3.365em, 1000.52em, 4.162em, -999.997em); top: -3.986em; left: 0em;"><span class="mi" id="MathJax-Span-40" style="font-family: MathJax_Math-italic;">x</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -3.815em; left: 0.573em;"><span class="mi" id="MathJax-Span-41" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mo" id="MathJax-Span-42" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-43" style="font-family: MathJax_Main;">–</span><span class="mi" id="MathJax-Span-44" style="font-family: MathJax_Math-italic; padding-left: 0.174em;">M<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span><span class="mi" id="MathJax-Span-45" style="font-family: MathJax_Math-italic;">i</span><span class="mi" id="MathJax-Span-46" style="font-family: MathJax_Math-italic;">n</span><span class="mo" id="MathJax-Span-47" style="font-family: MathJax_Main;">(</span><span class="msubsup" id="MathJax-Span-48"><span style="display: inline-block; position: relative; width: 0.915em; height: 0px;"><span style="position: absolute; clip: rect(3.365em, 1000.52em, 4.162em, -999.997em); top: -3.986em; left: 0em;"><span class="mi" id="MathJax-Span-49" style="font-family: MathJax_Math-italic;">x</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -3.815em; left: 0.573em;"><span class="mi" id="MathJax-Span-50" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mo" id="MathJax-Span-51" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.681em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.33em; border-left: 0px solid; width: 0px; height: 1.337em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>M</mi><mi>a</mi><mi>x</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>–</mo><mi>M</mi><mi>i</mi><mi>n</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-3"> Max(x_i) – Min(x_i) </script></p>
+<p>Numpy implements this as a point to point function <code>np.ptp</code>.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2">
+<pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ptp</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>9.0</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Variance">Variance</h1>
+<p>Variance is a measure of how variable the data is, it is calculated as:</p>
+<p><span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msup&gt;&lt;mi&gt;&amp;#x03C3;&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mstyle displaystyle=&quot;true&quot; scriptlevel=&quot;0&quot;&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;munderover&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mrow&gt;&lt;/munderover&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2013;&lt;/mo&gt;&lt;mi&gt;&amp;#x03BC;&lt;/mi&gt;&lt;msup&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mfrac&gt;&lt;/mstyle&gt;&lt;/math&gt;" role="presentation" style="text-align: center; position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-52" style="width: 9.803em; display: inline-block;"><span style="display: inline-block; position: relative; width: 8.379em; height: 0px; font-size: 117%;"><span style="position: absolute; clip: rect(0.801em, 1008.38em, 3.536em, -999.997em); top: -2.675em; left: 0em;"><span class="mrow" id="MathJax-Span-53"><span class="msubsup" id="MathJax-Span-54"><span style="display: inline-block; position: relative; width: 1.028em; height: 0px;"><span style="position: absolute; clip: rect(3.365em, 1000.57em, 4.162em, -999.997em); top: -3.986em; left: 0em;"><span class="mi" id="MathJax-Span-55" style="font-family: MathJax_Math-italic;">σ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.385em; left: 0.63em;"><span class="mn" id="MathJax-Span-56" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mo" id="MathJax-Span-57" style="font-family: MathJax_Main; padding-left: 0.288em;">=</span><span class="mstyle" id="MathJax-Span-58" style="padding-left: 0.288em;"><span class="mrow" id="MathJax-Span-59"><span class="mfrac" id="MathJax-Span-60"><span style="display: inline-block; position: relative; width: 5.758em; height: 0px; margin-right: 0.117em; margin-left: 0.117em;"><span style="position: absolute; clip: rect(2.852em, 1005.64em, 4.447em, -999.997em); top: -4.783em; left: 50%; margin-left: -2.846em;"><span class="mrow" id="MathJax-Span-61"><span class="munderover" id="MathJax-Span-62"><span style="display: inline-block; position: relative; width: 2.282em; height: 0px;"><span style="position: absolute; clip: rect(3.08em, 1001.03em, 4.39em, -999.997em); top: -3.986em; left: 0em;"><span class="mo" id="MathJax-Span-63" style="font-family: MathJax_Size1; vertical-align: 0em;">∑</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.365em, 1000.69em, 4.162em, -999.997em); top: -4.442em; left: 1.085em;"><span class="texatom" id="MathJax-Span-64"><span class="mrow" id="MathJax-Span-65"><span class="mi" id="MathJax-Span-66" style="font-size: 70.7%; font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.365em, 1001.2em, 4.162em, -999.997em); top: -3.701em; left: 1.085em;"><span class="texatom" id="MathJax-Span-67"><span class="mrow" id="MathJax-Span-68"><span class="mi" id="MathJax-Span-69" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span class="mo" id="MathJax-Span-70" style="font-size: 70.7%; font-family: MathJax_Main;">=</span><span class="mn" id="MathJax-Span-71" style="font-size: 70.7%; font-family: MathJax_Main;">1</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mo" id="MathJax-Span-72" style="font-family: MathJax_Main;">(</span><span class="msubsup" id="MathJax-Span-73"><span style="display: inline-block; position: relative; width: 0.915em; height: 0px;"><span style="position: absolute; clip: rect(3.365em, 1000.52em, 4.162em, -999.997em); top: -3.986em; left: 0em;"><span class="mi" id="MathJax-Span-74" style="font-family: MathJax_Math-italic;">x</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -3.815em; left: 0.573em;"><span class="mi" id="MathJax-Span-75" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mo" id="MathJax-Span-76" style="font-family: MathJax_Main;">–</span><span class="mi" id="MathJax-Span-77" style="font-family: MathJax_Math-italic; padding-left: 0.174em;">μ</span><span class="msubsup" id="MathJax-Span-78"><span style="display: inline-block; position: relative; width: 0.801em; height: 0px;"><span style="position: absolute; clip: rect(3.08em, 1000.29em, 4.39em, -999.997em); top: -3.986em; left: 0em;"><span class="mo" id="MathJax-Span-79" style="font-family: MathJax_Main;">)</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.328em; left: 0.402em;"><span class="mn" id="MathJax-Span-80" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.137em, 1000.91em, 4.162em, -999.997em); top: -3.302em; left: 50%; margin-left: -0.453em;"><span class="mi" id="MathJax-Span-81" style="font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.858em, 1005.76em, 1.256em, -999.997em); top: -1.308em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 5.758em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.085em;"></span></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.681em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.863em; border-left: 0px solid; width: 0px; height: 2.937em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><munderover><mo>∑</mo><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>N</mi></mrow></munderover><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>–</mo><mi>μ</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><mi>N</mi></mfrac></mstyle></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-4"> \sigma^2 = \dfrac{\sum_{i=1}^{N} (x_i – \mu)^2}{N} </script></p>
+<p>Numpy implements the variance as a function <code>np.var()</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2">
+<pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>3.0699999999999998</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Standard-Deviation">Standard Deviation</h1>
+<p>The variance can get very large for large data sets and so we will often use the standard deviation, which is the square root of the variance:</p>
+<p><span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-5-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mi&gt;&amp;#x03C3;&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msqrt&gt;&lt;msup&gt;&lt;mi&gt;&amp;#x03C3;&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/msqrt&gt;&lt;/math&gt;" role="presentation" style="text-align: center; position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-82" style="width: 4.846em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.105em; height: 0px; font-size: 117%;"><span style="position: absolute; clip: rect(1.484em, 1004.11em, 3.023em, -999.997em); top: -2.675em; left: 0em;"><span class="mrow" id="MathJax-Span-83"><span class="mi" id="MathJax-Span-84" style="font-family: MathJax_Math-italic;">σ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-85" style="font-family: MathJax_Main; padding-left: 0.288em;">=</span><span class="msqrt" id="MathJax-Span-86" style="padding-left: 0.288em;"><span style="display: inline-block; position: relative; width: 2.168em; height: 0px;"><span style="position: absolute; clip: rect(2.909em, 1001.03em, 4.162em, -999.997em); top: -3.986em; left: 1.028em;"><span class="mrow" id="MathJax-Span-87"><span class="msubsup" id="MathJax-Span-88"><span style="display: inline-block; position: relative; width: 1.028em; height: 0px;"><span style="position: absolute; clip: rect(3.365em, 1000.57em, 4.162em, -999.997em); top: -3.986em; left: 0em;"><span class="mi" id="MathJax-Span-89" style="font-family: MathJax_Math-italic;">σ<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.385em; left: 0.63em;"><span class="mn" id="MathJax-Span-90" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.536em, 1001.14em, 3.934em, -999.997em); top: -4.726em; left: 1.028em;"><span style="display: inline-block; position: relative; width: 1.142em; height: 0px;"><span style="position: absolute; font-family: MathJax_Main; top: -3.986em; left: -0.054em;">−<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; font-family: MathJax_Main; top: -3.986em; left: 0.459em;">−<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(2.966em, 1001.03em, 4.504em, -999.997em); top: -4.157em; left: 0em;"><span style="font-family: MathJax_Size1;">√</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.681em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.263em; border-left: 0px solid; width: 0px; height: 1.537em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>σ</mi><mo>=</mo><msqrt><msup><mi>σ</mi><mn>2</mn></msup></msqrt></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-5"> \sigma = \sqrt{\sigma^2} </script></p>
+<p>68.2% of the data falls within 1 standard deviation of the mean, 95.4% falls within 2 standard deviations of the mean, and 99.7% falls within 3 standard deviations.</p>
+<p>This is implemented in Numpy as <code>np.std()</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2">
+<pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>1.7521415467935231</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Standard-Error">Standard Error</h1>
+<p>The standard error of the mean (SE of the mean) estimates the variability between sample means that you would obtain if you took multiple samples from the same population. The standard error of the mean estimates the variability between samples whereas the standard deviation measures the variability within a single sample.</p>
+<p>It is calculated as:</p>
+<p><span class="MathJax_Preview" style="color: inherit; display: none;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-6-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mstyle displaystyle=&quot;true&quot; scriptlevel=&quot;0&quot;&gt;&lt;mfrac&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;msqrt&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msqrt&gt;&lt;/mfrac&gt;&lt;/mstyle&gt;&lt;/math&gt;" role="presentation" style="text-align: center; position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-91" style="width: 5.473em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.675em; height: 0px; font-size: 117%;"><span style="position: absolute; clip: rect(1.37em, 1004.67em, 3.821em, -999.997em); top: -2.675em; left: 0em;"><span class="mrow" id="MathJax-Span-92"><span class="mi" id="MathJax-Span-93" style="font-family: MathJax_Math-italic;">S<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span><span class="mi" id="MathJax-Span-94" style="font-family: MathJax_Math-italic;">E<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-95" style="font-family: MathJax_Main; padding-left: 0.288em;">=</span><span class="mstyle" id="MathJax-Span-96" style="padding-left: 0.288em;"><span class="mrow" id="MathJax-Span-97"><span class="mfrac" id="MathJax-Span-98"><span style="display: inline-block; position: relative; width: 1.655em; height: 0px; margin-right: 0.117em; margin-left: 0.117em;"><span style="position: absolute; clip: rect(3.365em, 1000.4em, 4.162em, -999.997em); top: -4.67em; left: 50%; margin-left: -0.225em;"><span class="mi" id="MathJax-Span-99" style="font-family: MathJax_Math-italic;">s</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.08em, 1001.54em, 4.447em, -999.997em); top: -3.302em; left: 50%; margin-left: -0.795em;"><span class="msqrt" id="MathJax-Span-100"><span style="display: inline-block; position: relative; width: 1.541em; height: 0px;"><span style="position: absolute; clip: rect(3.365em, 1000.57em, 4.162em, -999.997em); top: -3.986em; left: 0.858em;"><span class="mrow" id="MathJax-Span-101"><span class="mi" id="MathJax-Span-102" style="font-family: MathJax_Math-italic;">n</span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.536em, 1000.69em, 3.934em, -999.997em); top: -4.442em; left: 0.858em;"><span style="display: inline-block; position: relative; width: 0.687em; height: 0px;"><span style="position: absolute; font-family: MathJax_Main; top: -3.986em; left: -0.054em;">−<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; font-family: MathJax_Main; top: -3.986em; left: 0.003em;">−<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.023em, 1000.86em, 4.39em, -999.997em); top: -3.929em; left: 0em;"><span style="font-family: MathJax_Main;">√</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.858em, 1001.65em, 1.256em, -999.997em); top: -1.308em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 1.655em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.085em;"></span></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.681em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -1.197em; border-left: 0px solid; width: 0px; height: 2.603em;"></span></span></nobr><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>S</mi><mi>E</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>s</mi><msqrt><mi>n</mi></msqrt></mfrac></mstyle></math></span></span></div><script type="math/tex; mode=display" id="MathJax-Element-6"> SE = \dfrac{s}{\sqrt{n}} </script></p>
+<p>Where s is the sample standard deviation. Again Numpy doesn’t have an implementation of this (though it is easy to calculate), but we can use scipy’s stats module instead:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2">
+<pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">sem</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[8]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.1760968512214259</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So had we taken multiple samples from the same population we would expect the standard deviation of the means of those samples to be 0.176.</p>
+</div>
+</div>
+</div>
+
+							</div>
+						</div></div><div class="post-footer post-footer-light row-container"><div class="row-container">
+	  					<div class="row row-parent style-light no-top-padding double-bottom-padding" style="max-width: 800px; margin: auto;">
+								<div class="post-share">
+          						<div class="detail-container margin-auto">
+												<div class="share-button share-buttons share-inline only-icon sharer-0" style="display: block;"><label class="social-export"><span></span></label><div class="social load top center networks-8"><ul><li class="social-facebook" data-network="facebook"></li><li class="social-twitter" data-network="twitter"></li><li class="social-gplus" data-network="google_plus"></li><li class="social-pinterest" data-network="pinterest"></li><li class="social-linkedin" data-network="linkedin"></li><li class="social-paper-plane" data-network="email"></li></ul></div></div>
+											</div>
+										</div>
+							</div>
+						</div></div></div><div class="row-container row-navigation row-navigation-light">
+	  					<div class="row row-parent style-light limit-width">
+								<nav class="post-navigation" role="navigation">
+									<ul class="navigation"><li class="page-prev"><span class="btn-container"><a class="btn btn-link text-default-color btn-icon-left" href="http://benalexkeen.com/random-forests-in-python-using-scikit-learn/" rel="prev"><i class="fa fa-angle-left"></i><span>Prev</span></a></span></li><li class="page-next"><span class="btn-container"><a class="btn btn-link text-default-color btn-icon-right" href="http://benalexkeen.com/comparative-statistics-in-python-using-scipy/" rel="next"><span>Next</span><i class="fa fa-angle-right"></i></a></span></li></ul><!-- .navigation -->
+							</nav><!-- .post-navigation -->
+							</div>
+						</div>
+          </div>
+        </article>							</div><!-- sections container -->
+						</div><!-- page wrapper -->
+										<footer id="colophon" class="site-footer">
+						<div data-parent="true" class="style-color-rgdb-bg row-container mobile-hidden" data-section="0"><div class="row double-top-padding double-bottom-padding single-h-padding limit-width row-parent" data-imgready="true"><div class="row-inner cols-md-responsive"><div class="pos-top pos-left align_left column_parent col-lg-3 col-md-33 half-internal-gutter"><div class="uncol style-dark"><div class="uncoltable"><div class="uncell no-block-padding"><div class="uncont"><div class="wpb_widgetised_column wpb_content_element">
+		<div class="wpb_wrapper">
+			
+			
+		</div>
+	</div>
+</div></div></div></div></div><div class="pos-top pos-left align_left column_parent col-lg-3 tablet-hidden col-md-25 single-internal-gutter"><div class="uncol style-dark"><div class="uncoltable"><div class="uncell no-block-padding"><div class="uncont"><div class="wpb_widgetised_column wpb_content_element">
+		<div class="wpb_wrapper">
+			
+			
+		</div>
+	</div>
+</div></div></div></div></div><div class="pos-top pos-left align_left column_parent col-lg-3 col-md-33 single-internal-gutter"><div class="uncol style-dark"><div class="uncoltable"><div class="uncell no-block-padding"><div class="uncont"><div class="wpb_widgetised_column wpb_content_element">
+		<div class="wpb_wrapper">
+			
+			
+		</div>
+	</div>
+</div></div></div></div></div><div class="pos-top pos-left align_left column_parent col-lg-3 col-md-33 single-internal-gutter"><div class="uncol style-dark"><div class="uncoltable"><div class="uncell no-block-padding"><div class="uncont"><div class="wpb_widgetised_column wpb_content_element">
+		<div class="wpb_wrapper">
+			
+			
+		</div>
+	</div>
+</div></div></div></div></div><script id="script-579787" type="text/javascript">UNCODE.initRow(document.getElementById("script-579787"));</script></div></div></div><div class="row-container style-dark-bg footer-last">
+	  					<div class="row row-parent style-dark limit-width no-top-padding no-h-padding no-bottom-padding">
+								<div class="site-info uncell col-lg-6 pos-middle text-left">© 2019 Ben Alex Keen All rights reserved</div><!-- site info --><div class="uncell col-lg-6 pos-middle text-right"><div class="social-icon icon-box icon-box-top icon-inline"><a href="https://www.facebook.com/benalexkeen" target="_blank"><i class="fa fa-social-facebook"></i></a></div><div class="social-icon icon-box icon-box-top icon-inline"><a href="https://twitter.com/benalexkeen" target="_blank"><i class="fa fa-social-twitter"></i></a></div><div class="social-icon icon-box icon-box-top icon-inline"><a href="https://www.linkedin.com/in/benjamin-keen-7a13464a" target="_blank"><i class="fa fa-social-linkedin"></i></a></div><div class="social-icon icon-box icon-box-top icon-inline"><a href="https://github.com/benalexkeen" target="_blank"><i class="fa fa-github-square"></i></a></div></div>
+							</div>
+						</div>					</footer>
+									</div><!-- main container -->
+			</div><!-- main wrapper -->
+		</div><!-- box container -->
+	</div><!-- box wrapper -->
+	<div class="style-light footer-scroll-top" style="display: none;"><a href="http://benalexkeen.com/basic-statistics-in-python/#" class="scroll-top"><i class="fa fa-angle-up fa-stack fa-rounded btn-default btn-hover-nobg"></i></a></div>	<div class="overlay overlay-contentscale style-dark style-dark-bg overlay-search" data-area="search" data-container="box-container">
+		<div class="mmb-container"><div class="mobile-menu-button menu-button-offcanvas mobile-menu-button-dark lines-button x2 overlay-close close no-toggle" data-area="search" data-container="box-container"><span class="lines"></span></div></div>
+		<div class="search-container"><form action="http://benalexkeen.com/" method="get">
+	<div class="search-container-inner">
+		<input type="search" class="search-field form-fluid" placeholder="Search…" value="" name="s" title="Search for:">
+	  <i class="fa fa-search3"></i>
+	</div>
+</form>
+</div>
+	</div>
+<script type="text/javascript" src="./Basic Statistics in Python – Ben Alex Keen_files/jquery.form.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/benalexkeen.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Basic Statistics in Python – Ben Alex Keen_files/scripts.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var dot_irecommendthis = {"ajaxurl":"http:\/\/benalexkeen.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Basic Statistics in Python – Ben Alex Keen_files/dot_irecommendthis.js.download"></script>
+<script type="text/javascript" src="./Basic Statistics in Python – Ben Alex Keen_files/mediaelement-and-player.min.js.download"></script>
+<script type="text/javascript" src="./Basic Statistics in Python – Ben Alex Keen_files/plugins.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var SiteParameters = {"site_url":"http:\/\/benalexkeen.com","theme_directory":"http:\/\/benalexkeen.com\/wp-content\/themes\/Ben%20Alex%20Keen","admin_ajax":"http:\/\/benalexkeen.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Basic Statistics in Python – Ben Alex Keen_files/app.min.js.download"></script>
+<script type="text/javascript" src="./Basic Statistics in Python – Ben Alex Keen_files/wp-embed.min.js.download"></script>
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Size1, sans-serif;"></div></div><iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;" src="./Basic Statistics in Python – Ben Alex Keen_files/saved_resource.html"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}" style="display: none;"></div><div style="position: absolute; z-index: -10000; top: 0px; left: 0px; right: 0px; height: 4876px;"></div><div style="clear: both;"></div></body></html>
