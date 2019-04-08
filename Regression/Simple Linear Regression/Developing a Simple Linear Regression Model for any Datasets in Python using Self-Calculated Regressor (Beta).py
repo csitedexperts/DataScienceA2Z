@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 # Importing the dataset from the data file
 datasetDS = pd.read_csv('CompSalary_Data.csv')
 
-X = datasetDS.iloc[:, 0:1].values ## NOT  X = datasetDS.iloc[:, 0].values
+X = datasetDS.iloc[:, 0:4].values ## NOT  X = datasetDS.iloc[:, 1].values
 ## Since X is a Matrix here
 y = datasetDS.iloc[:, 7:8].values  ## NOT  y = datasetDS.iloc[:, 7].values
 ## Since y is a Transposed Matrix of the y itself
@@ -32,20 +32,20 @@ print("X_Transpose__X Inverse: ", X_Transpose__X__Inv)
 print("X_Transpose__X__Inv . X_Transpose: ", X_Transpose__X__Inv__X_Transpose)
 print("Regressor: ", reg)
 
-x_feature = [[4]]
+x_feature = [[4, 15, 4, 5]]
 y_predicted = np.matrix(x_feature) * np.matrix(reg)
 
 print("x_feature: ", x_feature)
 print ("y_predicted: ", y_predicted)
 
-x_feature = [[6]]
+x_feature = [[6, 15, 4, 5]]
 y_predicted = np.matrix(x_feature) * np.matrix(reg)
 
 print("x_feature: ", x_feature)
 print ("y_predicted: ", y_predicted)
 
 
-x_feature = [[8]]
+x_feature = [[8, 15, 4, 5]]
 y_predicted = np.matrix(x_feature) * np.matrix(reg)
 
 print("x_feature: ", x_feature)

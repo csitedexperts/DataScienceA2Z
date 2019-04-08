@@ -7,7 +7,7 @@ Created on Fri Apr  5 01:14:23 2019
 
 # Importing the required libraries
 import pandas as pd
-from sklearn.cross_validation import train_test_split
+from sklearn import cross_validation as cv
 
 # Importing the Salary .csv data set
 salaryDS = pd.read_csv('Dummy_Salary_Data.csv')
@@ -20,7 +20,9 @@ salary = salaryDS.iloc[:, 1].values
 
 # Splitting the data sets into Training set and Test set
 
-exp_train, exp_test = train_test_split(exp, test_size = .2, random_state = 0)
+exp_train, exp_test = cv.train_test_split(exp, test_size = .2, random_state = 0)
 
-salary_train, salary_test = train_test_split(salary, train_size = .8, random_state = 0)
+## Training => 80%  
+
+salary_train, salary_test = cv.train_test_split(salary, train_size = .8, random_state = 0)
 

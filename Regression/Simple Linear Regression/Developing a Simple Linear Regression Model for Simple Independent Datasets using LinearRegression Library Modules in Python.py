@@ -2,7 +2,7 @@
 # Importing the required libraries
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.cross_validation import train_test_split
+import sklearn.cross_validation as cv
 
 
 # Importing the dataset from the data file
@@ -26,15 +26,17 @@ plt.show()
 
 # Splitting the data sets into Training and Test sets
 
-X_train, X_test = train_test_split(X, test_size = .2, random_state = 0)
+X_train, X_test = cv.train_test_split(X, test_size = .20, random_state = 0)
 
-y_train, y_test = train_test_split(y, train_size = .8, random_state = 0)
-
+y_train, y_test = cv.train_test_split(y, train_size = .80, random_state = 0)
+# Training  => 80% 
 
 # Fitting Simple Linear Regression to the Training set
 from sklearn.linear_model import LinearRegression
 regressor = LinearRegression()
 regressor.fit(X_train, y_train)
+
+#print (regressor)  ## Can't be printed as something visible
 
 # Predicting the Test set results
 y_pred = regressor.predict(X_test)

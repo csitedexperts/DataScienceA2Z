@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt
 # Importing the dataset from the data file
 datasetDS = pd.read_csv('CompSalary_Data.csv')
 
-X = datasetDS.iloc[:, 0:7].values ## NOT  X = datasetDS.iloc[:, 0].values
+X = datasetDS.iloc[:, 0:7].values ## NOT  X = datasetDS.iloc[:, 7].values
 ## Since X is a Matrix here
-y = datasetDS.iloc[:, 7:8].values  ## NOT  y = datasetDS.iloc[:, 1].values
+y = datasetDS.iloc[:, 7:8].values  ## NOT  y = datasetDS.iloc[:, 7].values
 ## Since y is a Transposed Matrix of the y itself
 
 print (X)
@@ -66,9 +66,8 @@ print ("y_predicted: ", y_predicted)
 
 
 ### Could we do this ??
+
 """
-
-
 # Visualize the Original dataset
 import matplotlib.pyplot as plt
 
@@ -79,8 +78,6 @@ plt.xlabel("Years of Experience")
 plt.ylabel("Yearly Salary ($)")
 plt.grid()
 plt.show()
-
-"""
 
 
 
@@ -93,3 +90,4 @@ plt.show()
 
 ### No, this is not a 2D matrix 
 
+"""

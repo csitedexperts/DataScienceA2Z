@@ -21,19 +21,21 @@ Visualize/plot your preprocessed data (in two dimensions).
 """
 # import matplotlib.pyplot as plt
 
-plt.plot(exp, color = 'blue')  
+plt.plot(exp, color = "blue")  
 plt.plot(salary, color = 'red')  
 plt.title("Plot Visualization of Processed Samples")
 plt.xlabel("Experience (in year)")
 plt.ylabel("Salary  ($/Year)")
+plt.grid()
 plt.show()
 
 
 """
 Compute a Histogram for the Experience data.
 """
-plt.hist(exp, bins=10)  # arguments are passed to np.histogram
+plt.hist(exp, bins=20)  # arguments are passed to np.histogram
 plt.title("Experience (in year) Histogram with Preprossed Data ")
+plt.grid()
 plt.show()
 
 
@@ -73,6 +75,7 @@ plt.plot(age, color = 'red')
 plt.title("Plot Visualization of Processed Samples")
 plt.xlabel("Gender (Male / Female)")
 plt.ylabel("Age (in year)")
+plt.grid()
 plt.show()
 
 
@@ -83,6 +86,7 @@ Compute a Histogram for Experience and Salary data.
 """
 plt.hist(gender, bins=2)  # arguments are passed to np.histogram
 plt.title("Gender Histogram with Preprossed Data")
+plt.grid()
 plt.show()
 
 """
@@ -98,7 +102,7 @@ Conclusion: A histogram plot shows that ....
 
 mean, stdev = 0.5, 0.1
 
-dataset = np.random.normal(mean, stdev, size=1000)
+dataset = np.random.normal(mean, stdev, size=100)
 
 # Create the bins and histogram
 count, bins, ignored = plt.hist(dataset, bins=100, normed=True)
@@ -106,6 +110,7 @@ count, bins, ignored = plt.hist(dataset, bins=100, normed=True)
 # Plot the normal distribution curve
 plt.plot(bins, 1/(stdev * np.sqrt(2 * np.pi)) *
     np.exp( - (bins - mean)**2 / (2 * stdev**2) ),  linewidth=3, color='red')
+plt.grid()
 plt.show()
 
 
@@ -124,6 +129,7 @@ class NormalDistribution:
     def distributionCurve(self):
         plt.plot(self.c1, 1/(self.b1 * np.sqrt(2 * np.pi)) *
             np.exp( - (self.c1 - self.a1)**2 / (2 * self.b1**2) ), linewidth=2, color='red')
+        plt.grid()
         plt.show()
 
 mean, stdev = 5, 2 
@@ -169,8 +175,8 @@ for i in range(rowCount):
     height[i] = np.random.normal(loc=100, scale= 10, size=1)
     weight[i] = np.random.normal(loc=125, scale= 15, size=1)
 
-#print ("weight: ", weight)
-#print ("height: ", height)
+print ("weight: ", weight)
+print ("height: ", height)
 
 """
 Visualize/plot your preprocessed data (in two dimensions).
@@ -181,6 +187,7 @@ plt.plot(height, color = 'red')
 plt.title("Plot Visualization of Processed Samples")
 plt.xlabel("Height (in cm)")
 plt.ylabel("Weight (in lb)")
+plt.grid()
 plt.show()
 
 
@@ -197,6 +204,7 @@ plt.show()
 
 plt.hist(height, bins=10)  # arguments are passed to np.histogram
 plt.title("Height ratio Histogram with Preprossed Data ")
+plt.grid()
 plt.show()
 
 """

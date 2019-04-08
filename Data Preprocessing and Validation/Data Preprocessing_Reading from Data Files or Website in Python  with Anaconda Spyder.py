@@ -5,15 +5,15 @@ import pandas as pd
 # Importing dataset from a .csv data file
 
 #fileLocation = "Dummy_Salary_Data.csv"
-
 #fileLocation = 'Dummy_Salary_Data.csv'
+
 #fileLocation = "C:\\Users\\mhossa12\\workspace\\DataScienceA2Z\\Data Preprocessing and Validation\\Dummy_Salary_Data.csv"
 fileLocation = "C:/Users/mhossa12/workspace/DataScienceA2Z/Data Preprocessing and Validation/Dummy_Salary_Data.csv"
 
 datasetDS = pd.read_csv(fileLocation)
 print (datasetDS)
 
-dataMatrix = datasetDS.iloc[:, 0:2].values
+dataMatrix = datasetDS.iloc[:, 0:2].values  ## [0, 2)
 print (dataMatrix)
 
 
@@ -77,7 +77,7 @@ print (ticket_fare)
 
 
 # Importing dataset from a .xls data file
-titanic3DS = pd.read_excel('Titanic_Data3.xls')
+titanic3DS = pd.read_excel('TitanicData3.xls')
 print (titanic3DS)
 
 
