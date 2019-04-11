@@ -6,7 +6,7 @@ import sklearn.cross_validation as cv
 
 
 # Importing the dataset from the data file
-datasetDS = pd.read_csv('ExpSalary_Data.csv')
+datasetDS = pd.read_csv('CompSalary_Data.csv')
 #print (datasetDS)
 X = datasetDS.iloc[:, 0:1].values ## NOT  X = datasetDS.iloc[:, 0].values
 ## Since X is a Matrix here
@@ -42,6 +42,7 @@ regressor.fit(X_train, y_train)
 y_pred = regressor.predict(X_test)
 #print (X_train)
 #print (y_train)
+
 print (y_pred)
 
 # Visualize the Training set results
